@@ -121,10 +121,5 @@ Early exfiltration to file.io, later possible preparation for larger impact (cre
 
 This is a classic post-compromise ransomware-style attack chain: reconnaissance, collection, exfiltration, credential access, persistence, and command-and-control.
 
-
-
-
-
-
-
-
+## Mitre Att@ck TTP's Encountered
+<img width="754" height="606" alt="image" src="https://github.com/user-attachments/assets/e9f2e26e-9691-48de-95ff-a3aa6ac96cb5" />
