@@ -40,7 +40,9 @@ The external C2 IP (78.141.196.6) appears malicious but lacks widespread public 
 - Monitor for further activity from the C2 IP and update threat intelligence feeds.
 
 ---
-## Chronological Report of Attacker Actions
+
+##  Threat Hunt Queries, CTF Flag Response & Chronological Report of Attacker Actions
+- Threat Hunt Queries 
 
 ### Initial Access & Execution (22 Nov 2025, ~12:40 AM onward)
 
