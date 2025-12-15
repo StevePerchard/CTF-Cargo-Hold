@@ -42,7 +42,7 @@ The external C2 IP (78.141.196.6) appears malicious but lacks widespread public 
 ---
 
 ##  Threat Hunt Queries, CTF Flag Response & Chronological Report of Attacker Actions
-- Threat Hunt Queries () 
+- [Threat Hunt Queries](https://github.com/StevePerchard/CTF-Cargo-Hold/blob/main/KQL%20Threat%20Hunt%20Scripts.md) 
 
 ### Initial Access & Execution (22 Nov 2025, ~12:40 AM onward)
 
