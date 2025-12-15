@@ -1,16 +1,25 @@
 <img width="584" height="111" alt="image" src="https://github.com/user-attachments/assets/c4f0782c-5c24-4227-94ae-a95e87544970" />
 
 ## CTF-Cargo-Hold
+
+
 ## Executive Summary
 
 On 22 November 2025, the file server azuki-fileserver01 was compromised via the fileadmin account (high-privileged admin).
-The attacker conducted reconnaissance, downloaded a malicious PowerShell payload from external IP 78.141.196.6, exfiltrated sensitive data
-from multiple file shares (Contracts, Financial, IT-Admin, Shipping), dumped LSASS memory for credentials using ProcDump, 
-established persistence via a registry Run key, and set up ongoing command-and-control (C2) beaconing to the same external IP.
+
+The attacker conducted reconnaissance, downloaded a malicious PowerShell payload from external IP 78.141.196.6.
+sensitive data was exfiltrated from multiple file shares (Contracts, Financial, IT-Admin, Shipping).
+The Attacker dumped LSASS memory for credentials using ProcDump.
+
+The Attacker established persistence via a registry Run key, and set up ongoing command-and-control (C2) beaconing to the same external IP.
 Early exfiltration occurred to file.io.
+
 Subsequent logs (24-25 November) indicate lateral movement to azuki-adminpc (staging additional sensitive user data) and potential access to backup and other systems.
+
 This is a severe breach involving data theft, credential compromise, and persistent access, likely part of a ransomware or espionage operation.
+
 The external C2 IP (78.141.196.6) appears malicious but lacks widespread public reporting as of December 2025.
+
 
  ## Recommended Actions (Ordered by Urgency/Severity)
 
@@ -112,14 +121,7 @@ RDP connections observed (mstsc.exe to 10.1.0.108).
 Logons on azuki-backupsrv and azuki-sl.
 
 
-### Summary of Attacker Objectives
 
-Initial foothold via fileadmin credentials on fileserver.
-Recon → Download payload → Data exfiltration (shares + archives) → Credential dump (LSASS) → Persistence → C2 communication.
-External C2 IP: 78.141.196.6 (multiple ports: 8080, 7331, 8880).
-Early exfiltration to file.io, later possible preparation for larger impact (credential theft, further lateral movement).
-
-This is a classic post-compromise ransomware-style attack chain: reconnaissance, collection, exfiltration, credential access, persistence, and command-and-control.
 
 ## Mitre Att@ck TTP's Encountered
 <img width="754" height="606" alt="image" src="https://github.com/user-attachments/assets/e9f2e26e-9691-48de-95ff-a3aa6ac96cb5" />
